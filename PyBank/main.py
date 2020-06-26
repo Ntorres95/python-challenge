@@ -1,11 +1,16 @@
 import os
 import csv
 
+#List to hole the Profit/Loss column
+Profit_Losses = []
+
 csvpath = os.path.join('Resources','budget_data.csv')
 
 with open(csvpath, newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     
-    #check to see if it's printing the right thing
-    #for row in csvreader:
-        #print(row)
+    header = next(csvreader)
+
+    if header != None:
+        for row in csvreader:
+            Profit_Losses.append[row(1)]
