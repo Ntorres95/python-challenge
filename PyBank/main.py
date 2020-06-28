@@ -50,15 +50,31 @@ with open(csvpath, newline="") as csvfile:
     
     greatest_decrease = min(New_Profit_Losses)
     
-    increase_index = New_Profit_Losses.index(min(New_Profit_Losses)
+    increase_index = New_Profit_Losses.index(max(New_Profit_Losses))
     
-    print
+    decrease_index = New_Profit_Losses.index(min(New_Profit_Losses))
     
+    
+    #sanity check
+    #print(increase_index)
+    #print(New_Profit_Losses[increase_index])
     
 print("Financial Analysis")
-print("-------------------------------")
-print(f'Total months: ${total_months}')
+print("----------------------------------------------")
+print(f'Total months: {total_months}')
 print(f'Total: ${net_total}')
 print(f'Average Change: ${new_mean}')
-print(f'Greatest increase in profits: ${greatest_increase}')
-print(f'Greatest decrease in profits: ${greatest_decrease}')
+print(f'Greatest increase in profits: {Month_Year[increase_index]} (${greatest_increase})')
+print(f'Greatest decrease in profits: {Month_Year[decrease_index]} (${greatest_decrease})')
+
+file_path = "Analysis/Analysis.txt"
+
+file = open(file_path, "w")
+file.write('Financial Analysis\n')
+file.write('-----------------------------------------------\n')
+file.write(f'Total months: {total_months}\n')
+file.write(f'Total: ${net_total}\n')
+file.write(f'Average Change: ${new_mean}\n')
+file.write(f'Greatest increase in profits: {Month_Year[increase_index]} (${greatest_increase})\n')
+file.write(f'Greatest decrease in profits: {Month_Year[decrease_index]} (${greatest_decrease})\n')
+file.close()
