@@ -59,6 +59,7 @@ with open(csvpath, newline="") as csvfile:
     #print(increase_index)
     #print(New_Profit_Losses[increase_index])
     
+print("text")
 print("Financial Analysis")
 print("----------------------------------------------")
 print(f'Total months: {total_months}')
@@ -70,6 +71,7 @@ print(f'Greatest decrease in profits: {Month_Year[decrease_index]} (${greatest_d
 file_path = "Analysis/Analysis.txt"
 
 file = open(file_path, "w")
+file.write('text\n')
 file.write('Financial Analysis\n')
 file.write('-----------------------------------------------\n')
 file.write(f'Total months: {total_months}\n')
