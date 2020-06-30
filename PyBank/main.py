@@ -46,12 +46,16 @@ with open(csvpath, newline="") as csvfile:
     #round to the second decimal place
     new_mean = round(mean, 2)
     
+    #Find the greatest increase
     greatest_increase = max(New_Profit_Losses)
     
+    #Find the greatest decrease
     greatest_decrease = min(New_Profit_Losses)
     
+    #set a variable for the index of the greatest increase
     increase_index = New_Profit_Losses.index(max(New_Profit_Losses))
     
+    #set an variable for the index of the greatest decrease
     decrease_index = New_Profit_Losses.index(min(New_Profit_Losses))
     
     
@@ -59,6 +63,7 @@ with open(csvpath, newline="") as csvfile:
     #print(increase_index)
     #print(New_Profit_Losses[increase_index])
     
+#print out the results on the terminal
 print("text")
 print("Financial Analysis")
 print("----------------------------------------------")
@@ -68,8 +73,10 @@ print(f'Average Change: ${new_mean}')
 print(f'Greatest increase in profits: {Month_Year[increase_index]} (${greatest_increase})')
 print(f'Greatest decrease in profits: {Month_Year[decrease_index]} (${greatest_decrease})')
 
-file_path = "Analysis/Analysis.txt"
+#directory for the new file
+file_path = os.path.join('Analysis','Analysis.txt')
 
+#write the results on the new file
 file = open(file_path, "w")
 file.write('text\n')
 file.write('Financial Analysis\n')
