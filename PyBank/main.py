@@ -64,7 +64,6 @@ with open(csvpath, newline="") as csvfile:
     #print(New_Profit_Losses[increase_index])
     
 #print out the results on the terminal
-print("text")
 print("Financial Analysis")
 print("----------------------------------------------")
 print(f'Total months: {total_months}')
@@ -74,11 +73,10 @@ print(f'Greatest increase in profits: {Month_Year[increase_index]} (${greatest_i
 print(f'Greatest decrease in profits: {Month_Year[decrease_index]} (${greatest_decrease})')
 
 #directory for the new file
-file_path = os.path.join('Analysis','Analysis.txt')
+file_path = os.path.join('analysis','analysis.txt')
 
 #write the results on the new file
 file = open(file_path, "w")
-file.write('text\n')
 file.write('Financial Analysis\n')
 file.write('-----------------------------------------------\n')
 file.write(f'Total months: {total_months}\n')

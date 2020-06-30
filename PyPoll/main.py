@@ -63,6 +63,7 @@ with open(csvpath, newline="") as csvfile:
     OTooley_percent =  (OTooley_votes / total_votes) * 100
     
     #rounding check
+    #not sure why i cant get the 3 decimal places to show up
     Khan_percent = round(Khan_percent, 3)
     Correy_percent = round(Correy_percent, 3)
     Li_percent = round(Li_percent, 3)
@@ -73,3 +74,47 @@ with open(csvpath, newline="") as csvfile:
     #print(Correy_percent)
     #print(Li_percent)
     #print(OTooley_percent)
+    
+    #list for finding out the winner
+    votes_list = [Khan_votes, Correy_votes, Li_votes, OTooley_votes]
+    
+    if max(votes_list) == Khan_votes:
+        winner = "Khan"
+        
+    elif max(votes_list) == Correy_votes:
+        winner = "Correy"
+    
+    elif max(votes_list) == Li_votes:
+        winner = "Li"
+    
+    elif max(votes_list) == OTooley_votes:
+        winner = "OTooley"
+        
+print("Election Results")
+print("-----------------------------")
+print(f'Total votes: {total_votes}')
+print("-----------------------------")
+print(f'KHAN: {Khan_percent}% ({Khan_votes})')
+print(f'CORREY: {Correy_percent}% ({Correy_votes})')
+print(f'LI: {Li_percent}% ({Li_votes})')
+print(f'OTooley: {OTooley_percent}% ({OTooley_votes})')
+print("-----------------------------")
+print(f'Winner: {winner}')
+print("-----------------------------")
+
+#directory for the new file
+file_path = os.path.join('analysis','Election Results.txt')
+
+file = open(file_path, "w")
+file.write("Election Results")
+file.write("-----------------------------")
+file.write(f'Total votes: {total_votes}')
+file.write("-----------------------------")
+file.write(f'KHAN: {Khan_percent}% ({Khan_votes})')
+file.write(f'CORREY: {Correy_percent}% ({Correy_votes})')
+file.write(f'LI: {Li_percent}% ({Li_votes})')
+file.write(f'OTooley: {OTooley_percent}% ({OTooley_votes})')
+file.write("-----------------------------")
+file.write(f'Winner: {winner}')
+file.write("-----------------------------")
+file.close()
