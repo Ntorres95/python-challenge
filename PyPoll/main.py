@@ -32,15 +32,44 @@ with open(csvpath, newline="") as csvfile:
         total_votes = len(all_votes)
         
         #sanity check
-        print(total_votes)
+        #print(total_votes)
     
     #iterating through to count the votes once
     for item in all_votes:
     
         #conditional to count khan's votes
         if item == "Khan":
-            
             Khan_votes = Khan_votes + 1
             
         #conditional to count Correy's votes
+        elif item == "Correy":
+            Correy_votes = Correy_votes + 1
         
+        #conditional to count Li's votes
+        elif item == "Li":
+            Li_votes = Li_votes + 1
+        
+        #conditional to count OTooley's votes
+        elif item == "O'Tooley":
+            OTooley_votes = OTooley_votes + 1
+            
+    #calculating the percentages for each candidates votes
+    Khan_percent = (Khan_votes / total_votes) * 100
+    
+    Correy_percent = (Correy_votes / total_votes) * 100
+    
+    Li_percent =  (Li_votes / total_votes) * 100
+    
+    OTooley_percent =  (OTooley_votes / total_votes) * 100
+    
+    #rounding check
+    Khan_percent = round(Khan_percent, 3)
+    Correy_percent = round(Correy_percent, 3)
+    Li_percent = round(Li_percent, 3)
+    OTooley_percent = round(OTooley_percent, 3)
+    
+    #sanity check
+    #print(Khan_percent)
+    #print(Correy_percent)
+    #print(Li_percent)
+    #print(OTooley_percent)
